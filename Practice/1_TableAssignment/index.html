@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Table Assignment</title>
+    <style>
+      div {
+        height: 100px;
+        width: 200px;
+      }
+      .div1 {
+        background-color: lightgreen;
+      }
+      .div2 {
+        background-color: lightpink;
+        /* position: relative; */
+        position: absolute; /* By default it works w.r.t veiwport */
+        top: 40px;
+        /* left: 40px; */
+        right: 0;
+      }
+      .div3 {
+        background-color: lightsalmon;
+      }
+
+      .grandParent {
+        border: 2px solid green;
+        height: 500px;
+        width: 700px;
+        /* position: relative; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grandParent">
+      <div
+        style="border: 2px solid red; height: 500px; width: 500px; margin: 0"
+      >
+        <div class="div1">Div 1</div>
+        <div class="div2">Div 2</div>
+        <div class="div3">Div 3</div>
+      </div>
+    </div>
+
+    <table border="5" cellpadding="20" cellspacing="0">
+      <caption>
+        Time Table
+      </caption>
+      <thead align="center">
+        <tr>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th></th>
+          <th colspan="2">5</th>
+          <th colspan="2">6</th>
+        </tr>
+      </thead>
+      <tbody align="center">
+        <!-- 1 -->
+        <tr>
+          <td>Mon</td>
+          <td>CP</td>
+          <td>HTML</td>
+          <td>CSS</td>
+          <th rowspan="5">
+            B <br /><br />
+            R <br /><br />
+            E <br /><br />
+            A <br /><br />
+            K
+          </th>
+          <td colspan="2">Java</td>
+          <td colspan="2">C++</td>
+        </tr>
+
+        <!-- 2 -->
+        <tr>
+          <td>Tue</td>
+          <td rowspan="3">Eng</td>
+          <td colspan="2">Web Dev</td>
+          <td>C++</td>
+          <td>HTML</td>
+          <td>CSS</td>
+          <td rowspan="2">OS</td>
+        </tr>
+
+        <!-- 3 -->
+        <tr>
+          <td>Wed</td>
+          <td colspan="2">C++</td>
+          <td colspan="3">Python</td>
+        </tr>
+
+        <!-- 4 -->
+        <tr>
+          <td>Thur</td>
+          <td colspan="2">Java</td>
+          <td>Eng</td>
+          <td>CP</td>
+          <td colspan="2">Networks</td>
+        </tr>
+
+        <!-- 5 -->
+        <tr>
+          <td>Fri</td>
+          <td colspan="3">Data Science</td>
+          <td colspan="2">C++</td>
+          <td colspan="2">Python</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

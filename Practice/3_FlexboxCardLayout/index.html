@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>FlexBox Card Layout</title>
+    <style>
+      nav {
+        background-color: rgb(76, 74, 74);
+        text-align: center;
+        color: white;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 40px;
+      }
+
+      card {
+        /* border: 1px solid gray; */
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 17%;
+        padding: 15px;
+        box-shadow: -1px 1px 10px gray;
+        transition: transform 0.3s ease;
+      }
+
+      card:hover {
+        cursor: pointer;
+        transform: scale(1.05); /* 105% */
+      }
+
+      img {
+        height: 160px;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      p {
+        margin: 0;
+        color: rgb(105, 104, 104);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1 style="padding: 7px 0">FlexBox Card Layout</h1>
+    </nav>
+
+    <div>
+      <card>
+        <img src="image.jpg" alt="" />
+        <h3>Card Title 1</h3>
+        <p>Short description for card 1</p>
+      </card>
+      <card>
+        <img src="image.jpg" alt="" />
+        <h3>Card Title 2</h3>
+        <p>Short description for card 2</p>
+      </card>
+      <card>
+        <img src="image.jpg" alt="" />
+        <h3>Card Title 3</h3>
+        <p>Short description for card 3</p>
+      </card>
+      <card>
+        <img src="image.jpg" alt="" />
+        <h3>Card Title 4</h3>
+        <p>Short description for card 4</p>
+      </card>
+    </div>
+  </body>
+</html>
