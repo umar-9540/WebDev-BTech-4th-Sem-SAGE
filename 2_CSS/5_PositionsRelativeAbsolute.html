@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        height: 20vh;
+        width: 30vw;
+        background-color: red;
+        margin: 10px;
+      }
+
+      .parent {
+        width: 40vw;
+        height: 40vh;
+        position: relative;
+      }
+
+      .child {
+        position: absolute;
+        background-color: cyan;
+        top: 20px;
+        /* left: 100px; */
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div></div>
+    <div class="child"></div>
+    <div></div> -->
+
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
