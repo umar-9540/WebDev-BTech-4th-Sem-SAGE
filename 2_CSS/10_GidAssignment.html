@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        display: grid;
+        height: 99vh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        /* grid-template-areas:
+        1   2    3    4
+          "red red black blue"
+          "pink green green blue"
+          "pink yellow yellow yellow"; */
+      }
+
+      .red {
+        grid-area: red;
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        background-color: red;
+      }
+
+      .black {
+        grid-area: black;
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        background-color: black;
+      }
+
+      .blue {
+        grid-area: blue;
+        background-color: blue;
+      }
+
+      .pink {
+        grid-area: pink;
+        background-color: pink;
+      }
+
+      .green {
+        grid-area: green;
+        background-color: green;
+      }
+
+      .yellow {
+        grid-area: yellow;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M20.6 17.51a.5.5 0 0 1 0 .98l-.1.01h-17a.5.5 0 0 1 0-1h17zm0-6a.5.5 0 0 1 0 .98l-.1.01h-17a.5.5 0 0 1 0-1h17zm0-6a.5.5 0 0 1 0 .98l-.1.01h-17a.5.5 0 0 1 0-1h17z"
+      ></path>
+    </svg>
+    <div class="container">
+      <div class="red"></div>
+      <div class="black"></div>
+      <div class="pink"></div>
+      <div class="green"></div>
+      <div class="blue"></div>
+      <div class="yellow"></div>
+    </div>
+  </body>
+</html>

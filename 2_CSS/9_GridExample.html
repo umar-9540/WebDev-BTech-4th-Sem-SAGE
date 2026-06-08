@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Example</title>
+    <style>
+      .container {
+        display: grid;
+        height: 99vh;
+        grid-template-columns: 200px 1fr 200px;
+        grid-template-rows: 60px 1fr 60px;
+        grid-template-areas:
+          "navbar navbar navbar"
+          "sidebar main sidebar-Right"
+          ".       footer footer";
+        gap: 10px;
+        color: white;
+        text-align: center;
+      }
+
+      .navbar {
+        grid-area: navbar;
+        /* grid-column: 1 / 4;
+        grid-row: 1 / 2; */
+        background-color: cyan;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+        /* grid-column: 1 / 2;
+        grid-row: 2 / 3; */
+        background-color: red;
+      }
+
+      .main {
+        grid-area: main;
+        /* grid-column: 2 / 3;
+        grid-row: 2 / 3; */
+        background-color: blue;
+      }
+
+      .footer {
+        grid-area: footer;
+        /* grid-column: 1 / 4;
+        grid-row: 3 / 4; */
+        background-color: green;
+      }
+
+      .sidebar-right {
+        grid-area: sidebar-Right;
+        /* grid-column: 3 / 4;
+        grid-row: 2 / 3; */
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">NAVBAR</nav>
+      <div class="sidebar">SIDE</div>
+      <div class="main">MAIN CONTENT</div>
+      <div class="sidebar-right">RIGHT</div>
+      <div class="footer">FOOTER</div>
+    </div>
+  </body>
+</html>
