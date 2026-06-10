@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations In CSS</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        /* animation-name: SlideAndFade;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate; */
+        animation: SlideAndFade 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes SlideAndFade {
+        0% {
+          transform: translateX(0px) scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: translateX(200px) scale(1.5);
+        }
+        100% {
+          transform: translateX(400px) scale(1);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
