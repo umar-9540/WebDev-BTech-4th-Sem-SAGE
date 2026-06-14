@@ -9,4 +9,4 @@ while (count > 0) {
   count--;
 }
 
-console.log(b);
+// console.log(b);  // b is not defined
