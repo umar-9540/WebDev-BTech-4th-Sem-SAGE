@@ -18,4 +18,4 @@ console.log(user["age"]);
 console.log(user[""]);
 console.log(user[" "]);
 console.log(user["last name"]);
-//key containing spaces not accessed by .
+//key containing spaces not accessed by . operator
