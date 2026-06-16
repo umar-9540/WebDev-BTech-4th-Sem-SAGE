@@ -33,3 +33,24 @@ let user = people
     age: p.age,
   }));
 console.log(user);
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let square = numbers.filter((n) => n % 2 == 0).map((n) => n * n);
+console.log(square);
+
+let employee = [
+  { id: 1, name: "A", salary: 30000 },
+  { id: 2, name: "B", salary: 20000 },
+  { id: 3, name: "C", salary: 40000 },
+  { id: 4, name: "D", salary: 50000 },
+];
+
+let fruits = ["Apple", "Mango", "Apple", "Orange", "Apple", "Mango"];
+
+let occurence = fruits.reduce((acc, curr) => {
+  // acc["Apple"]
+  acc[curr] = (acc[curr] || 0) + 1;
+  return acc;
+}, {});
+
+console.log(occurence);
