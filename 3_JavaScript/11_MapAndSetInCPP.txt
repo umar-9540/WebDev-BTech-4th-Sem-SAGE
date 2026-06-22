@@ -49,3 +49,43 @@ int main() {
         cout << "NOT FOUND";
     }       
 }
+
+Ques - 290 SOLUTION
+class Solution {
+public:
+    bool wordPattern(string pattern, string s) {
+        unordered_map<char, string> charToString;
+        unordered_map<string, char> stringToChar;
+
+        int i = 0;
+        int n = s.size();
+        for (char c : pattern) {
+            if (i >= n) {
+                return false;
+            }
+
+            int j = i;
+            while (j < n && s[j] != ' ') {
+                j++;
+            }
+
+            string word = s.substr(i, j - i);
+
+            if (charToString.count(c) && charToString[c] != word) {
+                return false;
+            }
+            if (stringToChar.count(word) && stringToChar[word] != c) {
+                return false;
+            }
+
+            charToString[c] = word;
+            stringToChar[word] = c;
+            i = j + 1;
+        }
+        if (i < n) {
+            return false;
+        }
+
+        return true;
+    }
+};
