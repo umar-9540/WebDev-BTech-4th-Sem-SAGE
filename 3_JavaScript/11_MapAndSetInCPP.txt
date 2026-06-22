@@ -18,3 +18,34 @@ Ordered (map/set)                 ||              Unordered (map/set)
 map / set                         ||     unordered_map<int, int> mapName;
 Balancing BST                     ||      Hash Table
 TC => O(log N)                    ||     Average -> O(1) && Worst -> O(N)
+
+Example
+
+int main() {
+    unordered_set<int> numbers;
+    // map<char, int> alpha;
+    
+    numbers.insert(50);    
+    numbers.insert(10);
+    numbers.insert(20);
+    
+    for (int num : numbers) {
+        cout << num << endl;
+    }
+    
+    unordered_map<string, int> user;
+    // user["Payal"] = 23;
+    user.insert({"Payal", 23});
+    user.insert({"Ankit", 23});
+    user.insert({"Neha", 23});
+    
+    for (auto pair : user) {
+        cout << pair.first << " : " << pair.second << endl;
+    }
+    
+    if (user.find("Bob") != user.end()) {
+        cout << "FOUND";
+    } else {
+        cout << "NOT FOUND";
+    }       
+}
