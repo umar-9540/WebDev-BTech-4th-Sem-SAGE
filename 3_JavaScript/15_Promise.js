@@ -9,6 +9,7 @@
 //   }
 // });
 
+// PROMISE CHAINING
 // p.then((data) => {
 //   console.log(data);
 //   return 2; // Promise Always returns a promise

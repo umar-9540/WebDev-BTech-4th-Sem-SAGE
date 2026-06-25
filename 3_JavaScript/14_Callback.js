@@ -40,46 +40,46 @@
 // // // maggieBanana();
 // // // maggieKhana();
 
-function download(url) {
-  return new Promise((res) => {
-    console.log("Download starts at url: ", url);
-    setTimeout(() => {
-      let profileImage = url.split("/")[4];
-      console.log("Download end: ", profileImage);
+// function download(url) {
+//   return new Promise((res) => {
+//     console.log("Download starts at url: ", url);
+//     setTimeout(() => {
+//       let profileImage = url.split("/")[4];
+//       console.log("Download end: ", profileImage);
 
-      res(profileImage);
-    }, 2000); // Maan lena download mai 2 sec lag gaye
-  });
-}
+//       res(profileImage);
+//     }, 2000); // Maan lena download mai 2 sec lag gaye
+//   });
+// }
 
-function compress(profileImage) {
-  return new Promise((res) => {
-    console.log("Starts compressing: ", profileImage);
-    setTimeout(() => {
-      let compressedImage = profileImage.split(".")[0] + ".webp";
-      console.log("End compression:", compressedImage);
+// function compress(profileImage) {
+//   return new Promise((res) => {
+//     console.log("Starts compressing: ", profileImage);
+//     setTimeout(() => {
+//       let compressedImage = profileImage.split(".")[0] + ".webp";
+//       console.log("End compression:", compressedImage);
 
-      res(compressedImage);
-    }, 2000); // maan lena compression mai 2 sec lag gaye
-  });
-}
+//       res(compressedImage);
+//     }, 2000); // maan lena compression mai 2 sec lag gaye
+//   });
+// }
 
-function upload(compressedImage) {
-  return new Promise((res) => {
-    console.log("Starts uploading: ", compressedImage);
-    setTimeout(() => {
-      let newUrl = "https://nayawebsite.com/" + compressedImage;
-      console.log("Done uploading, new URL: ", newUrl);
-      res();
-    }, 2000); // maan lena uploading mai 2 sec lag gaye
-  });
-}
+// function upload(compressedImage) {
+//   return new Promise((res) => {
+//     console.log("Starts uploading: ", compressedImage);
+//     setTimeout(() => {
+//       let newUrl = "https://nayawebsite.com/" + compressedImage;
+//       console.log("Done uploading, new URL: ", newUrl);
+//       res();
+//     }, 2000); // maan lena uploading mai 2 sec lag gaye
+//   });
+// }
 
-let url = "https://ankitkiwebsite.com/image/profile.jpg";
+// let url = "https://ankitkiwebsite.com/image/profile.jpg";
 
-download(url)
-  .then((profileImage) => compress(profileImage))
-  .then((compressedImage) => upload(compressedImage));
+// download(url)
+//   .then((profileImage) => compress(profileImage))
+//   .then((compressedImage) => upload(compressedImage));
 // download(url, compress);
 // // download(url);
 // // compress("profile.jpg");
@@ -91,26 +91,26 @@ download(url)
 //   });
 // });
 
-// function orderPlace(cb) {
-//   setTimeout(() => {
-//     console.log("Order Placed");
-//     cb();
-//   }, 1000);
-// }
+function orderPlace(cb) {
+  setTimeout(() => {
+    console.log("Order Placed");
+    cb();
+  }, 1000);
+}
 
-// function foodPrepare(cb) {
-//   setTimeout(() => {
-//     console.log("Food Prepared");
-//     cb();
-//   }, 1000);
-// }
+function foodPrepare(cb) {
+  setTimeout(() => {
+    console.log("Food Prepared");
+    cb();
+  }, 1000);
+}
 
-// function foodDeliver(cb) {
-//   setTimeout(() => {
-//     console.log("Food Deliver");
-//     cb();
-//   }, 1000);
-// }
+function foodDeliver(cb) {
+  setTimeout(() => {
+    console.log("Food Deliver");
+    cb();
+  }, 1000);
+}
 
 // CALLBACK HELL
 // orderPlace(() => {
