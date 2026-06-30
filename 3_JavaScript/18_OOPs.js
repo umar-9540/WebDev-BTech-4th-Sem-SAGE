@@ -36,6 +36,11 @@ class Student {
     // this.attendance++;
     console.log(`is present.`);
   }
+
+  static greet() {
+    // Only accessed by class and not by Objects
+    console.log("Hello, Student");
+  }
 }
 
 const student1 = new Student();
@@ -43,3 +48,6 @@ const student2 = new Student();
 
 student1.isPresent();
 student2.isPresent();
+
+// student1.greet();  // error: .greet() is not a function
+Student.greet();
