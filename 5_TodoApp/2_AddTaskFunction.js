@@ -90,5 +90,47 @@ ul.addEventListener("click", (ev) => {
       console.log(todos);
       Todo.refreshTodos();
     }
+  } else if (element.classList.contains("increase-priority")) {
+    let name = element.parentElement.innerText;
+    name = name.slice(0, name.length - 7);
+    console.log(name);
+
+    // element.parentElement.remove(); // only removes from DOM
+    // console.log(todos);
+
+    let idx = -1;
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].task == name) {
+        idx = i;
+      }
+    }
+
+    if (idx > 0) {
+      let temp = todos[idx];
+      todos[idx] = todos[idx - 1];
+      todos[idx - 1] = temp;
+      Todo.refreshTodos();
+    }
+  } else if (element.classList.contains("decrease-priority")) {
+    let name = element.parentElement.innerText;
+    name = name.slice(0, name.length - 7);
+    console.log(name);
+
+    // element.parentElement.remove(); // only removes from DOM
+    // console.log(todos);
+
+    let idx = -1;
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].task == name) {
+        idx = i;
+      }
+    }
+
+    if (idx < todos.length - 1) {
+      let temp = todos[idx];
+      todos[idx] = todos[idx + 1];
+      todos[idx + 1] = temp;
+      Todo.refreshTodos();
+    }
   }
 });
