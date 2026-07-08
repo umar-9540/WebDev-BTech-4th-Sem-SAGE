@@ -2,7 +2,7 @@ const inp = document.querySelector("#inp");
 const btn = document.querySelector("#btn");
 const ul = document.querySelector("#ul");
 
-const todos = [
+let todos = [
   { task: "Cricket", id: 1 },
   { task: "Coding", id: 2 },
   { task: "Sleep", id: 3 },
@@ -47,6 +47,7 @@ class Todo {
   }
 
   static refreshTodos() {
+    ul.innerText = "";
     for (let i = 0; i < todos.length; i++) {
       this.addTodo(todos[i].task, true);
     }
@@ -61,5 +62,33 @@ btn.addEventListener("click", () => {
   //   console.log(inpValue);
   inp.value = "";
 
-  Todo.addTodo(inpValue);
+  if (inpValue) {
+    Todo.addTodo(inpValue);
+  }
+});
+
+// ------------------------ DELETE A TASK ---------------------------
+ul.addEventListener("click", (ev) => {
+  let element = ev.target;
+  if (element.classList.contains("delete-task")) {
+    let name = element.parentElement.innerText;
+    name = name.slice(0, name.length - 7);
+    console.log(name);
+
+    // element.parentElement.remove(); // only removes from DOM
+    // console.log(todos);
+
+    let idx = -1;
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].task == name) {
+        idx = i;
+      }
+    }
+
+    if (idx != -1) {
+      todos.splice(idx, 1);
+      console.log(todos);
+      Todo.refreshTodos();
+    }
+  }
 });
