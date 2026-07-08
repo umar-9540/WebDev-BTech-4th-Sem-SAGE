@@ -5,12 +5,13 @@ const ul = document.querySelector("#ul");
 const todos = [
   { task: "Cricket", id: 1 },
   { task: "Coding", id: 2 },
+  { task: "Sleep", id: 3 },
 ];
 
 let currentId = todos.length + 1;
 
 class Todo {
-  static addTodo(taskName) {
+  static addTodo(taskName, isRefreshing = false) {
     let li = document.createElement("li");
     li.innerText = taskName;
 
@@ -36,13 +37,23 @@ class Todo {
     ul.appendChild(li);
     // console.log(ul);
 
-    todos.push({
-      task: taskName,
-      id: currentId++,
-    });
+    if (isRefreshing == false) {
+      todos.push({
+        task: taskName,
+        id: currentId++,
+      });
+    }
     console.log(todos);
   }
+
+  static refreshTodos() {
+    for (let i = 0; i < todos.length; i++) {
+      this.addTodo(todos[i].task, true);
+    }
+  }
 }
+
+Todo.refreshTodos();
 
 // ------------------------ ADD A TASK ---------------------------
 btn.addEventListener("click", () => {
