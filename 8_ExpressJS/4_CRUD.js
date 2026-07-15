@@ -2,9 +2,8 @@ const express = require("express");
 
 const app = express();
 
-const { createUser, deleteUser } = require("./contollers/studentControllers");
 // const createUser = require("./contollers/studentControllers");
-
+const studentRoutes = require("./routes/studentRoutes");
 app.use(express.urlencoded());
 
 let students = [
@@ -33,7 +32,10 @@ app.get("/:id", (req, res) => {
 });
 
 // POST => Creating new student
-app.post("/", createUser);
+// app.post("/", createUser);
+app.post("/students", studentRoutes);
+
+app.post("/teachers", teacherRoutes);
 
 // PUT => Update full data
 app.put("/:id", (req, res) => {
@@ -77,3 +79,8 @@ app.delete("/:id", deleteUser);
 app.listen(3000, () => {
   console.log("Server is runnng on PORT: 3000");
 });
+
+app.get("/students");
+
+// sage.com/students/:id
+// sage.com/teachers/:id
