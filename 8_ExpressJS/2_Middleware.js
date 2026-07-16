@@ -9,7 +9,7 @@ app.use((req, res, next) => {
 });
 //  /about , /about/page
 // /about-page => Error
-app.use("/about", (req, res, next) => {
+app.use((req, res, next) => {
   console.log("Middleware 2");
   next();
 });
