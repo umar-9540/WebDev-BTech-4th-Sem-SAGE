@@ -10,8 +10,10 @@
     <h1>Todo App</h1>
 
     <form action="submit" id="form">
+      <input type="hidden" id="todoId" />
       <input id="title-input" type="text" placeholder="Write a Todo" required />
       <button type="submit" id="add-btn">Add Todo</button>
+      <button type="button" id="cancel" style="display: none;"">Cancel</button>
     </form>
 
     <div id="todo-list">

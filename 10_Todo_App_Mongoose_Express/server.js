@@ -51,6 +51,22 @@ app.get("/todos", async (req, res) => {
   }
 });
 
+// Edit Todo
+app.put("/todos/:id", async (req, res) => {
+  try {
+    const updatedTodo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
+      new: true, // Return the updated data
+      runValidators: true, // validate the new data before updating
+    });
+
+    if (!updatedTodo) res.status(404).send("Todo Not Found");
+
+    res.status(200).json(updatedTodo);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 // Delete Todo
 app.delete("/todos/:id", async (req, res) => {
   try {
