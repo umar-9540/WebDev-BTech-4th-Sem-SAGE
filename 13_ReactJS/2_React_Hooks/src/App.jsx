@@ -3,13 +3,10 @@ import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
 
 function App() {
-  const [todos, setTodos] = useState([]);
-
-  // Load from LocalStorage on mount
-  useEffect(() => {
-    const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-    setTodos(savedTodos);
-  }, []);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
 
   // Save to LocalStorage whenever 'todos' array changes
   useEffect(() => {
