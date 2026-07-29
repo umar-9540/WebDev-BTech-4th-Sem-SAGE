@@ -1,40 +1,18 @@
-import React, { useState, useEffect } from "react";
-import TodoForm from "./TodoForm";
-import TodoItem from "./TodoItem";
+import React, { createContext } from "react";
+import Parent from "./Parent";
 
-function App() {
-  const [todos, setTodos] = useState(() => {
-    const savedTodos = localStorage.getItem("todos");
-    return savedTodos ? JSON.parse(savedTodos) : [];
-  });
+export const dataContext = createContext();
 
-  // Save to LocalStorage whenever 'todos' array changes
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-  const addTodo = (title, description) => {
-    const newTodo = { id: Date.now(), title, description };
-    setTodos([...todos, newTodo]); // Update state
-  };
-
-  const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
+const App = () => {
+  const x = "Hello, from App";
 
   return (
-    <div style={{ padding: "20px", maxWidth: "500px" }}>
-      <h2>My Todo List</h2>
-      {/* Passing function as a prop to child */}
-      <TodoForm addTodo={addTodo} />
-
-      <div>
-        {todos.map((todo) => (
-          /* Passing data and functions as props */
-          <TodoItem key={todo.id} todo={todo} deleteTodo={deleteTodo} />
-        ))}
-      </div>
+    <div>
+      <dataContext.Provider value={x}>
+        <Parent />
+      </dataContext.Provider>
     </div>
   );
-}
+};
+
 export default App;
